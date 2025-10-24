@@ -49,7 +49,7 @@ class SpeakerLayout:
         return np.sqrt(np.sum(diff ** 2, axis=-1))
 
     def _random_points_on_sphere(self, n, radius):
-        az      = 2 * np.pi * np.random.rand(n)
+        az      = np.pi * np.random.rand(n)
         el      = np.arcsin(2 * np.random.rand(n) - 1)
         dist    = np.full(n, radius)
         return az, el, dist
@@ -71,7 +71,7 @@ class SpeakerLayout:
         if r < 0.95:
             az, el = 0.0, 0.0
         elif r < 0.98:
-            az, el = np.pi, 0.0
+            az, el = 0.0, 0.0
         else:
             az, el = 0.0, np.pi / 2
         return np.array([[az, el, radius]])
