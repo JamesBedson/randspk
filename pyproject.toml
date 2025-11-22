@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "randspk"
+version = "0.0.1"
+description = "Random speaker position generator with transformer for geometric information encoding."
+requires-python = ">=3.12"
+authors = [
+  { name = "James Bedson", email = "jamesbedson0@gmail.com" }
+]
+dependencies = [
+    "numpy>=2.3.5",
+    "torch>= 2.9.1",
+    "cartopy>=0.25.0",
+    "matplotlib>=3.10.7",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
